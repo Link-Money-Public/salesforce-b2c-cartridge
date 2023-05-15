@@ -1,0 +1,11 @@
+.linked-bank {
+  border: 1px solid grey;
+  border-radius: 6px; }
+
+.edit-bank-button {
+  color: #00a1e0;
+  background: none;
+  border: none; }
+
+.edit-bank-button:hover {
+  text-decoration: underline; }

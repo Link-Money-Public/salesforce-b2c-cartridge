@@ -1,0 +1,17 @@
+<isset name="constants" value="${require('*/cartridge/scripts/util/constants')}" scope="page"/>
+<div class="tab-pane active linkMoney-content" id="linkMoney-content" role="tabpanel">
+    <fieldset class="payment-form-fields">
+        <isif condition="${pdict.linkMoneyCustomerId && pdict.linkMoneyBankInfo}">
+            <div class="mb-2">${Resource.msg('linkmoney.text.linked.bank','linkmoney',null)}</div>
+            <isinclude template="linkMoney/linkedBank" />
+            <isinclude template="linkMoney/linkToBankButton" />
+        <iselse/>
+            <div class="mb-3">
+                ${Resource.msg('linkmoney.text.description','linkmoney',null)}
+            </div>
+            <isinclude template="linkMoney/linkToBankButton" />
+        </isif>
+        <input type="hidden" class="form-control" name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+            value="${constants.LINK_PAYMENT_METHOD_ID}">
+    </fieldset>
+</div>

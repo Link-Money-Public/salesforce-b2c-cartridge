@@ -1,0 +1,13 @@
+<isset name="constants" value="${require('*/cartridge/scripts/util/constants')}" scope="page"/>
+<div class="payment-details">
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+        <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
+            <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+        </isif>
+        <iscomment>Custom Link Money cartridge start</iscomment>
+        <isif condition="${payment.paymentMethod === constants.LINK_PAYMENT_METHOD_ID}">
+            <isinclude template="checkout/billing/paymentOptions/linkMoneySummary" />
+        </isif>
+        <iscomment>Custom Link Money cartridge end</iscomment>
+    </isloop>
+</div>

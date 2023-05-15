@@ -1,0 +1,12 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/linkMoney.css');
+</isscript>
+<div class="linked-bank d-flex p-2 align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+        <img class="linked-bank-image mr-2" height="40px" src="${pdict.linkMoneyBankInfo.iconUrl}" alt="Bank logo" />
+        <p class="linked-bank-name d-none d-sm-block mb-0 mr-1">${pdict.linkMoneyBankInfo.financialInstitutionName}</p>
+        <p class="m-0">${Resource.msgf('linkmoney.text.last.digits', 'linkmoney', null, pdict.linkMoneyBankInfo.accountLastFourDigits)}</p>
+    </div>
+</div>
+<button class="edit-bank-button pl-0 mt-1" id="link-btn">${Resource.msg('linkmoney.button.change.bank', 'linkmoney', null)}</button>

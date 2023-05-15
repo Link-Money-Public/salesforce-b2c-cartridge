@@ -1,0 +1,12 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.form.processor.linkmoney",
+            "script": "./cartridge/scripts/hooks/payment/processor/linkmoney_form_processor"
+        },
+        {
+            "name": "app.payment.processor.linkmoney",
+            "script": "./cartridge/scripts/hooks/payment/processor/linkmoney"
+        }
+    ]
+}

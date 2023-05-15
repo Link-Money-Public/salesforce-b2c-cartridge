@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Basket">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="linkMoneySessionId">
+                <display-name xml:lang="x-default">Link Money Session Id</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+    <type-extension type-id="CustomerPaymentInstrument">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="linkedBankName">
+                <display-name xml:lang="x-default">linkedBankName</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="linkMoneyOrderId">
+                <display-name xml:lang="x-default">Link Money Order Id</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkMoneyPaymentStatus">
+                <display-name xml:lang="x-default">Link Money Payment Status</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Link Money">
+                <display-name xml:lang="x-default">Link Money</display-name>
+                <attribute attribute-id="linkMoneyPaymentStatus"/>
+                <attribute attribute-id="linkMoneyOrderId"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="OrderPaymentInstrument">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="linkedBankIcon">
+                <display-name xml:lang="x-default">linkedBankIcon</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkedBankLastNumbers">
+                <display-name xml:lang="x-default">linkedBankLastNumbers</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkedBankName">
+                <display-name xml:lang="x-default">linkedBankName</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+    <type-extension type-id="Profile">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="linkMoneyCustomerId">
+                <display-name xml:lang="x-default">Link Money Customer Id</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Link Money">
+                <display-name xml:lang="x-default">Link Money</display-name>
+                <attribute attribute-id="linkMoneyCustomerId"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="enableLinkMoney">
+                <display-name xml:lang="x-default">Enable Link Money Pay by Bank</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkMoneyApiBaseUrl">
+                <display-name xml:lang="x-default">Link Money API base url</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkMoneyClientId">
+                <display-name xml:lang="x-default">Link Money Client ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkMoneyClientSecret">
+                <display-name xml:lang="x-default">Link Money Client Secret</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkMoneyEnableEmailNotification">
+                <display-name xml:lang="x-default">Link Money enable email notification</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkMoneyMerchantId">
+                <display-name xml:lang="x-default">Link Money Merchant ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="linkMoneyEnvironment">
+                <display-name xml:lang="x-default">Link Money Environment</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Link Money">
+                <display-name xml:lang="x-default">Link Money</display-name>
+                <attribute attribute-id="enableLinkMoney"/>
+                <attribute attribute-id="linkMoneyApiBaseUrl"/>
+                <attribute attribute-id="linkMoneyClientId"/>
+                <attribute attribute-id="linkMoneyClientSecret"/>
+                <attribute attribute-id="linkMoneyMerchantId"/>
+                <attribute attribute-id="linkMoneyEnvironment"/>
+                <attribute attribute-id="linkMoneyEnableEmailNotification"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

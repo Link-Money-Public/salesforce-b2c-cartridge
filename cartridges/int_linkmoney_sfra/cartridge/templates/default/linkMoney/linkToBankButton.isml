@@ -1,0 +1,15 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/linkMoney.js');
+</isscript>
+<script>
+    window.linkMoneyRedirectUrl = "${pdict.linkMoneyRedirectUrl}";
+    window.linkMoneySessionId = "${pdict.linkMoneySessionId}";
+    window.isGuestCustomer = "${!session.getCustomer().isAuthenticated()}";
+    window.getGuestSessionUrl = "${URLUtils.https('LinkMoney-GetSession')}";
+    window.linkMoneyEnvironment = "${pdict.linkMoneyEnvironment}"
+</script>
+<isif condition="${!pdict.linkMoneyBankInfo}">
+    <button style="width:100%" id="link-btn"
+        class="btn btn-primary">${Resource.msg('linkmoney.button.link.bank', 'linkmoney', null)}</button>
+</isif>
