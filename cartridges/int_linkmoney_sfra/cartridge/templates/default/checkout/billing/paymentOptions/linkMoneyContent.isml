@@ -1,13 +1,14 @@
-<isset name="constants" value="${require('*/cartridge/scripts/util/constants')}" scope="page"/>
+<isset name="constants" value="${require('*/cartridge/scripts/util/constants')}" scope="page" />
 <div class="tab-pane active linkMoney-content" id="linkMoney-content" role="tabpanel">
     <fieldset class="payment-form-fields">
         <isif condition="${pdict.linkMoneyCustomerId && pdict.linkMoneyBankInfo}">
-            <div class="mb-2">${Resource.msg('linkmoney.text.linked.bank','linkmoney',null)}</div>
+            <div class="mb-2">${Resource.msg('linkmoney.text.linked.bank', 'linkmoney', null)}</div>
             <isinclude template="linkMoney/linkedBank" />
-            <isinclude template="linkMoney/linkToBankButton" />
         <iselse/>
             <div class="mb-3">
-                ${Resource.msg('linkmoney.text.description','linkmoney',null)}
+                ${Resource.msg('linkmoney.text.description', 'linkmoney', null)}
+                <img class="linkMoney-tooltip ml-1" role='button' src="${URLUtils.staticURL('/images/tooltip-icon.svg')}" height="15"
+                    alt="Tooltip" />
             </div>
             <isinclude template="linkMoney/linkToBankButton" />
         </isif>
@@ -15,3 +16,4 @@
             value="${constants.LINK_PAYMENT_METHOD_ID}">
     </fieldset>
 </div>
+<isinclude template="linkMoney/tooltipPopUp"/>

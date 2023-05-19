@@ -1,15 +1,47 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
     assets.addJs('/js/linkMoney.js');
+    assets.addCss('/css/linkMoney.css');
 </isscript>
-<script>
-    window.linkMoneyRedirectUrl = "${pdict.linkMoneyRedirectUrl}";
-    window.linkMoneySessionId = "${pdict.linkMoneySessionId}";
-    window.isGuestCustomer = "${!session.getCustomer().isAuthenticated()}";
-    window.getGuestSessionUrl = "${URLUtils.https('LinkMoney-GetSession')}";
-    window.linkMoneyEnvironment = "${pdict.linkMoneyEnvironment}"
-</script>
 <isif condition="${!pdict.linkMoneyBankInfo}">
-    <button style="width:100%" id="link-btn"
-        class="btn btn-primary">${Resource.msg('linkmoney.button.link.bank', 'linkmoney', null)}</button>
+    <button type="submit" id="link-btn" class="btn btn-primary w-100">${Resource.msg('linkmoney.button.link.bank', 'linkmoney', null)}</button>
+<iselse/>
+    <button class="edit-bank-button pl-0 mt-1" id="link-btn"
+        type="submit">${Resource.msg('linkmoney.button.change.bank', 'linkmoney', null)}</button>
 </isif>
+
+<script type="module">
+import Link from 'https://static.link.money/linkmoney-web/v1/latest/linkmoney-web.min.js';
+$(document).ready(function () {
+    $('#link-btn').on('click', function (event) {
+        if ("${!session.getCustomer().isAuthenticated()}" === 'false') {
+            const config = {
+                sessionKey: "${pdict.linkMoneySessionId}",
+                redirect: "${pdict.linkMoneyRedirectUrl}",
+                environment: "${pdict.linkMoneyEnvironment}"
+            };
+            const link = Link.LinkInstance(config);
+            link.action();
+        } else {
+            $.ajax({
+                url: "${URLUtils.https('LinkMoney-GetSession')}",
+                type: 'get',
+                success: function success(data) {
+                    if (data.error) {
+                        window.location.href = data.redirectUrl;
+                        return;
+                    }
+                    const config = {
+                        sessionKey: data.sessionKey,
+                        redirect: "${pdict.linkMoneyRedirectUrl}",
+                        environment: "${pdict.linkMoneyEnvironment}"
+                    };
+                    const link = Link.LinkInstance(config);
+                    link.action();
+                },
+                error: function error() {}
+            });
+        }
+    });
+});
+</script>

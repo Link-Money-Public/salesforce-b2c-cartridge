@@ -241,10 +241,11 @@ var scrollAnimate = require('../components/scrollAnimate');
             method: 'POST',
             data: paymentForm,
             success: function (data) {
-              /* Custom Link Money cartridge start */
               // enable the next:Place Order button here
-              if (!$('.linkMoney-tab').hasClass('active')) {
-                $('body').trigger('checkout:enableButton', '.next-step-button button');
+              $('body').trigger('checkout:enableButton', '.next-step-button button');
+              /* Custom Link Money cartridge start */
+              if ($('.linkMoney-tab').hasClass('active') && !$('.linked-bank').length) {
+                $('body').trigger('checkout:disableButton', '.submit-payment');
               }
               /* Custom Link Money cartridge end */
               if (data.error) {

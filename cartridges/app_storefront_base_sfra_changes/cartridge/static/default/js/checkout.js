@@ -247,7 +247,7 @@
                 type: "post",
                 data: h,
                 success: function (t) {
-                  e(".linkMoney-tab").hasClass("active") && !e(".linked-bank").length || e("body").trigger("checkout:enableButton", ".next-step-button button"), a.methods.shippingFormResponse(i, t);
+                  e("body").trigger("checkout:enableButton", ".next-step-button button"), e(".linkMoney-tab").hasClass("active") && !e(".linked-bank").length && e("body").trigger("checkout:disableButton", ".submit-payment"), a.methods.shippingFormResponse(i, t);
                 },
                 error: function (t) {
                   e("body").trigger("checkout:enableButton", ".next-step-button button"), t.responseJSON && t.responseJSON.redirectUrl && (window.location.href = t.responseJSON.redirectUrl), i.reject(t.responseJSON);

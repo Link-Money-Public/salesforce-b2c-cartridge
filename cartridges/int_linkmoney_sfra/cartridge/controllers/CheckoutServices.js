@@ -6,6 +6,14 @@ var server = require('server');
 server.extend(module.superModule);
 server.append('SubmitPayment', server.middleware.https, function (req, res, next) {
   var viewData = res.getViewData();
+  if (viewData.fieldErrors && viewData.fieldErrors.length) {
+    // respond with form data and errors
+    res.json({
+      fieldErrors: viewData.fieldErrors,
+      error: true
+    });
+    return next();
+  }
   if (viewData.paymentMethod.value === constants.LINK_PAYMENT_METHOD_ID) {
     var linkMoneyAccountsService = require('*/cartridge/services/linkMoneyAccountsService');
     var customer = req.session.raw.getCustomer();
@@ -24,7 +32,7 @@ server.append('SubmitPayment', server.middleware.https, function (req, res, next
       }
     }
   }
-  return next();
+  next();
 });
 
 /**

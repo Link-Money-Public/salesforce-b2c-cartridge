@@ -9,4 +9,4 @@
         <p class="m-0">${Resource.msgf('linkmoney.text.last.digits', 'linkmoney', null, pdict.linkMoneyBankInfo.accountLastFourDigits)}</p>
     </div>
 </div>
-<button class="edit-bank-button pl-0 mt-1" id="link-btn">${Resource.msg('linkmoney.button.change.bank', 'linkmoney', null)}</button>
+<isinclude template="linkMoney/linkToBankButton" />

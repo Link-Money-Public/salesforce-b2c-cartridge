@@ -1,7 +1,7 @@
 <li class="nav-item" data-method-id="${paymentOption.ID}">
     <a class="nav-link linkMoney-tab active" data-toggle="tab" href="#linkMoney-content" role="tab">
         <img class="linkMoney-option"
-                src="${URLUtils.staticURL('/images/pay-by-bank-logo.svg')}"
+                src="${URLUtils.staticURL('/images/link-money-pay-by-bank.svg')}"
                 height="32"
                 alt="${paymentOption.name}"
                 title="${paymentOption.name}"

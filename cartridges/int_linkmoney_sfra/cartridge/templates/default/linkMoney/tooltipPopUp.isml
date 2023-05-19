@@ -1,0 +1,51 @@
+<div class="tooltip-modal d-none">
+    <div class="tooltip-fade"></div>
+    <div class="tooltip-popup d-flex flex-column align-items-center px-3 px-sm-5 py-4">
+        <img class="tooltip-cancel" role='button' src="${URLUtils.staticURL('/images/cancel-icon.svg')}" height="16"
+            alt="Cancel" />
+        <img class="tooltip-logo" src="${URLUtils.staticURL('/images/link-money-logo.svg')}" height="58"
+            alt="Link Money Logo" />
+        <div class="tooltip-title text-center mt-3 mb-3 mb-sm-4">${Resource.msg('linkmoney.tooltip.text1', 'linkmoney', null)}</div>
+        <div class="tooltip-steps d-flex align-items-center justify-content-between">
+            <div class="tooltip-step text-center">
+                <img class="mb-3 mt-3" src="${URLUtils.staticURL('/images/banks-icon.svg')}" height="16" alt="Banks" />
+                <p class="mb-0">${Resource.msg('linkmoney.tooltip.text2', 'linkmoney', null)}</p>
+            </div>
+            <img src="${URLUtils.staticURL('/images/arrow-icon.svg')}" height="16" alt="Arrow" />
+            <div class="tooltip-step text-center">
+                <img class="mb-3" src="${URLUtils.staticURL('/images/bank-icon.svg')}" height="34" alt="Bank" />
+                <p class="mb-0">${Resource.msg('linkmoney.tooltip.text3', 'linkmoney', null)}</p>
+            </div>
+            <img src="${URLUtils.staticURL('/images/arrow-icon.svg')}" height="16" alt="Arrow" />
+            <div class="tooltip-step text-center">
+                <img class="mb-3" src="${URLUtils.staticURL('/images/money-icon.svg')}" height="34" alt="Coin" />
+                <p class="mb-0">${Resource.msg('linkmoney.tooltip.text4', 'linkmoney', null)}</p>
+            </div>
+        </div>
+        <div class="tooltip-devider my-4"></div>
+        <div class="tooltip-benefit d-flex align-items-center">
+            <div class="tooltip-image-container d-flex justify-content-center align-items-center">
+                <img class="" src="${URLUtils.staticURL('/images/clock-icon.svg')}" height="30" alt="Clock" />
+            </div>
+            ${Resource.msg('linkmoney.tooltip.text5', 'linkmoney', null)}
+        </div>
+        <div class="tooltip-benefit d-flex align-items-center">
+            <div class="tooltip-image-container d-flex justify-content-center align-items-center">
+                <img class="" src="${URLUtils.staticURL('/images/card-icon.svg')}" height="26" alt="Card" />
+            </div>
+            ${Resource.msg('linkmoney.tooltip.text6', 'linkmoney', null)}
+        </div>
+        <div class="tooltip-benefit d-flex align-items-center">
+            <div class="tooltip-image-container d-flex justify-content-center align-items-center">
+                <img src="${URLUtils.staticURL('/images/lock-icon.svg')}" height="26" alt="Lock" />
+            </div>
+            ${Resource.msg('linkmoney.tooltip.text7', 'linkmoney', null)}
+        </div>
+        <div class="tooltip-benefit d-flex align-items-center">
+            <div class="tooltip-image-container d-flex justify-content-center align-items-center">
+                <img src="${URLUtils.staticURL('/images/check-icon.svg')}" height="26" alt="Check" />
+            </div>
+            ${Resource.msg('linkmoney.tooltip.text8', 'linkmoney', null)}
+        </div>
+    </div>
+</div>

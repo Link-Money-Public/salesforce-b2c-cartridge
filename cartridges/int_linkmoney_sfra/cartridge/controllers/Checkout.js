@@ -13,10 +13,10 @@ server.prepend('Begin', server.middleware.https, consentTracking.consent, csrfPr
   var viewData = res.getViewData();
   var enableLinkMoney = linkMoneyHelper.getCustomPreferenceValue('enableLinkMoney');
   var currentBasket = BasketMgr.getCurrentBasket();
-  viewData.linkMoneyRedirectUrl = URLUtils.https('LinkMoney-LinkToBank');
+  viewData.linkMoneyRedirectUrl = URLUtils.https('LinkMoney-LinkToBank').append('page', 'checkout');
   viewData.enableLinkMoney = enableLinkMoney;
   viewData.linkMoneyEnvironment = linkMoneyHelper.getCustomPreferenceValue('linkMoneyEnvironment');
-  if (!currentBasket.customerEmail) {
+  if (currentBasket && !currentBasket.customerEmail) {
     // eslint-disable-next-line no-undef
     session.custom.guestCustomerId = null;
   }
@@ -45,8 +45,6 @@ server.prepend('Begin', server.middleware.https, consentTracking.consent, csrfPr
     if (enableLinkMoney && !req.currentCustomer.raw.authenticated && session.custom.guestCustomerId) {
       // eslint-disable-next-line no-undef
       viewData.linkMoneyCustomerId = session.custom.guestCustomerId;
-      // eslint-disable-next-line no-undef
-      viewData.guestCustomerId = session.custom.guestCustomerId;
       var bankInfo = linkMoneyAccountsService.linkMoneyAccountsService.call({
         // eslint-disable-next-line no-undef
         customerId: session.custom.guestCustomerId
